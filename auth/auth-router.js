@@ -19,3 +19,5 @@ router.post('/register', (req, res) => {
       res.status(500).json(err);
     });
 });
+
+module.exports = router;
