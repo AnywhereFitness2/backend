@@ -1,5 +1,7 @@
+const server = require('../api/server');
 const classesRouter = require('express').Router();
-// need class model and restricted route
+const Classes = require('./class-model.js');
+const restricted = require('../auth/restricted.js');
 
 router.get('/', restricted, async (req, res) => {
   try {
