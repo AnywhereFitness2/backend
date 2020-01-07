@@ -11,3 +11,57 @@ Instructors can take attendance, request and process payments, create virtual "p
 - What is the mission statement?
 
 AnywhereFitness is the all-in-one solution to meet your "on-location" fitness class needs.
+
+# Anywhere Fitness v1.0.0
+
+Backend Project for Lambda&#39;s Build Week API Repository, deployed Link is https://anywhere-fitness-be.herokuapp.com/
+
+# Auth
+
+## Logs an User In
+
+<p>Logs an User In</p>
+
+    POST /api/auth/login
+
+### Parameters
+
+| Name     | Type   | Description                 |
+| -------- | ------ | --------------------------- |
+| username | String | <p>Username of the User</p> |
+| password | String | <p>Password of the User</p> |
+
+### Success Response
+
+Success-Response:
+
+```
+{
+    "message": "Welcome dreamyghost!",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOjIsInVzZXJuYW1lIjoiZHJlYW15Z2hvc3QiLCJpYXQiOjE1NzgzNjQ2MjYsImV4cCI6MTU3ODM2ODIyNn0.-wTYw5cy87qlTSxR5qDbMdkl_1fBSjRvy_ZFtVppyt8"
+}
+```
+
+### Error Response
+
+Username-Not-Found-Response
+
+```
+{
+    "message": "Invalid Credentials"
+}
+```
+
+Incorrect-Password
+
+```
+{
+    "message": "Invalid Credentials"
+}
+```
+
+## Registers a New User
+
+<p>Registers a New User</p>
+
+    POST /api/auth/register
