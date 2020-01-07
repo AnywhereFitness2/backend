@@ -65,3 +65,23 @@ Incorrect-Password
 <p>Registers a New User</p>
 
     POST /api/auth/register
+
+### Parameters
+
+| Name     | Type   | Description                              |
+| -------- | ------ | ---------------------------------------- |
+| username | String | <p>The New Users username \*Required</p> |
+| password | String | <p>The New Users password \*Required</p> |
+|  |
+
+### Success Response
+
+Success-Response:
+
+```
+{
+    "registered_user": [
+        2
+    ]
+}
+```
