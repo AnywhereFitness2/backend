@@ -1,41 +1,32 @@
 const db = require('../database/dbconfig');
 
-module.exports = {
-  findClasses,
-  findClassById,
-  findClassesByCatId,
-  addClass,
-  removeClass,
-  updateClass
-};
-
-function findClasses() {
-  return db('Classes');
+function find() {
+  return db('classes');
 }
 
-function findClassById(id) {
-  return db('Classes')
+function findBy(filter) {
+  return db('classes')
+    .where(filter)
+    .returning('*');
+}
+
+function add(newClass) {
+  return db('classes')
+    .insert(newClass)
+    .returning('*');
+}
+
+function update(id, editClass) {
+  return db('classes')
     .where({ id })
-    .first();
+    .update(editClass)
+    .returning('*');
 }
 
-function findClassesByCatId(category_id) {
-  return db('Classes')
-    .where({ category_id })
-    .first();
-}
-
-function addClass(something) {
-  return db('Classes').insert(something);
-}
-
-function removeClass(id) {
-  return db('Classes')
+function remove(id) {
+  return db('classes')
     .where({ id })
     .del();
 }
-function updateClass(id, changes) {
-  return db('Classes')
-    .where({ id })
-    .update(changes);
-}
+
+module.exports = { find, findBy, add, update, remove };
