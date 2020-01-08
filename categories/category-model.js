@@ -1,4 +1,4 @@
-const db = require('../dbConfig');
+const db = require('../database/dbconfig');
 
 function find() {
   return db('categories');
