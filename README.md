@@ -72,7 +72,6 @@ Incorrect-Password
 | -------- | ------ | ---------------------------------------- |
 | username | String | <p>The New Users username \*Required</p> |
 | password | String | <p>The New Users password \*Required</p> |
-|  |
 
 ### Success Response
 
@@ -85,3 +84,13 @@ Success-Response:
     ]
 }
 ```
+
+## Returns all classes
+
+    GET /api/classes
+
+## Add New Class
+
+    POST /api/classes
+
+### Parameters
